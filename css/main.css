@@ -41,7 +41,6 @@ header .navbar .navbar-menu .navbar-menu__content .menu-list {
 }
 header .navbar .navbar-menu .navbar-menu__content .menu-list .navbar-submenu__content {
   display: none;
-  background-color: bisque;
   position: absolute;
   top: 3rem;
 }
