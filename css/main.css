@@ -1,0 +1,57 @@
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+img {
+  display: block;
+}
+
+.inner {
+  width: 70%;
+}
+
+header {
+  width: 100%;
+  position: relative;
+}
+header .navbar {
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .navbar .navbar-logo {
+  display: flex;
+  align-items: center;
+}
+header .navbar .navbar-logo .logo {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+header .navbar .navbar-logo p {
+  padding-left: 0.25rem;
+}
+header .navbar .navbar-menu .navbar-menu__content {
+  display: flex;
+}
+header .navbar .navbar-menu .navbar-menu__content .menu-list {
+  display: flex;
+  padding: 1.5rem 3rem;
+}
+header .navbar .navbar-menu .navbar-menu__content .menu-list .navbar-submenu__content {
+  display: none;
+  background-color: bisque;
+  position: absolute;
+  top: 3rem;
+}
+header .navbar .navbar-menu .navbar-menu__content .menu-list .navbar-submenu__content li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+header .navbar .navbar-login .navbar-login__list {
+  display: flex;
+}
+header .navbar .navbar-login .navbar-login__list li {
+  padding: 0 0.5rem;
+}/*# sourceMappingURL=main.css.map */
