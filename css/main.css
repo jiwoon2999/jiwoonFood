@@ -1,3 +1,7 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 a {
   text-decoration: none;
   color: #333;
@@ -7,21 +11,35 @@ img {
   display: block;
 }
 
-.inner {
-  width: 70%;
+h1 {
+  color: #08678c;
+}
+
+.inner-m {
+  width: 48rem;
+}
+
+.the-line {
+  width: 50%;
+  height: 0.2rem;
+  margin: auto;
+  background-color: #333;
 }
 
 header {
-  width: 100%;
   position: relative;
+  z-index: 9;
+  font-size: 0.85rem;
 }
 header .navbar {
-  margin: 20px auto;
+  width: 100%;
+  margin: 1.25rem auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 header .navbar .navbar-logo {
+  width: 8rem;
   display: flex;
   align-items: center;
 }
@@ -32,25 +50,207 @@ header .navbar .navbar-logo .logo {
 header .navbar .navbar-logo p {
   padding-left: 0.25rem;
 }
-header .navbar .navbar-menu .navbar-menu__content {
+header .navbar .menu-modal__container {
+  width: 100%;
+  height: 4rem;
+  position: absolute;
+  top: -15rem;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+  background-color: #fff;
+}
+header .navbar .menu-modal__container .menu-mainmenu {
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+header .navbar .menu-modal__container .menu-mainmenu li {
+  padding: 1rem;
+}
+header .navbar .menu-modal__container .menu-membership {
+  display: flex;
+  padding: 1rem;
+}
+header .navbar .menu-modal__container .menu-membership li {
+  padding: 0.3rem;
+}
+header .navbar .navbar-menu {
+  width: 80%;
+  display: none;
+}
+header .navbar .navbar-menu .navbar-menu__content {
+  width: 24rem;
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
 }
 header .navbar .navbar-menu .navbar-menu__content .menu-list {
   display: flex;
-  padding: 1.5rem 3rem;
 }
 header .navbar .navbar-menu .navbar-menu__content .menu-list .navbar-submenu__content {
   display: none;
   position: absolute;
-  top: 3rem;
+  top: 2.2rem;
 }
 header .navbar .navbar-menu .navbar-menu__content .menu-list .navbar-submenu__content li {
-  padding: 0.5rem 0;
-  font-size: 1rem;
+  padding: 0.4rem 0;
+  font-size: 0.8rem;
+}
+header .navbar .navbar-menu .navbar-menu__content .menu-list .navbar-submenu__content li a {
+  color: #fff;
+}
+header .navbar .navbar-login {
+  display: none;
 }
 header .navbar .navbar-login .navbar-login__list {
   display: flex;
 }
 header .navbar .navbar-login .navbar-login__list li {
   padding: 0 0.5rem;
+}
+
+main {
+  width: 100vw;
+  height: 53.5rem;
+  position: relative;
+}
+main .slide {
+  width: 100vw;
+  display: flex;
+  transition: all 1s ease-in-out;
+}
+main .slide .slide-item {
+  width: 100vw;
+  position: relative;
+}
+main .slide .slide-item img {
+  width: 100vw;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .slide .slide-item p {
+  width: 31.25rem;
+  height: 6.25rem;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 12rem;
+  right: 0;
+  left: 0;
+  margin: auto;
+  line-height: 4rem;
+}
+main .btn-container span {
+  font-size: 2rem;
+  color: #fff;
+}
+main .btn-container .slide-btn {
+  position: absolute;
+  border: transparent;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+}
+main .btn-container .prevbtn {
+  left: 0;
+}
+main .btn-container .nextbtn {
+  right: 1rem;
+}
+
+.section-first {
+  width: 100%;
+}
+.section-first .consult-container {
+  width: 100%;
+  height: 30rem;
+  margin: auto;
+}
+.section-first .consult-container .cafeteria-box {
+  background-color: #215ba6;
+}
+.section-first .consult-container .cafeteria-box:hover {
+  background-color: #63bbf2;
+}
+.section-first .consult-container .delivery-box {
+  background-color: #1f7334;
+}
+.section-first .consult-container .delivery-box:hover {
+  background-color: #5dbe49;
+}
+.section-first .consult-container .kakaotalk-box {
+  background-color: #f2a007;
+}
+.section-first .consult-container .kakaotalk-box:hover {
+  background-color: #f2ce16;
+}
+.section-first .consult-container .consult-box {
+  width: 100%;
+  height: 9.375rem;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+.section-first .consult-container .consult-box .cafeteria,
+.section-first .consult-container .consult-box .delivery,
+.section-first .consult-container .consult-box .kakaotalk {
+  width: 100%;
+  height: 6rem;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+}
+.section-first .consult-container .consult-box h1 {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+.section-first .consult-container .consult-box span {
+  font-size: 2rem;
+}
+.section-first .consult-container .consult-box p {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+.section-second {
+  margin-top: 5rem;
+}
+.section-second .business-container .business h1 {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 700;
+}
+.section-second .business-container .business p {
+  margin-top: 1rem;
+  text-align: center;
+}
+.section-second .business-container .business-foodservice img,
+.section-second .business-container .business-foodmanagement img {
+  width: 100%;
+  height: 25rem;
+  margin-top: 3rem;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+.section-second .business-container .business-foodservice h1,
+.section-second .business-container .business-foodmanagement h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+.section-second .business-container .business-foodservice p,
+.section-second .business-container .business-foodmanagement p {
+  width: 22rem;
+  text-align: center;
+  line-height: 1.5rem;
+  margin: 1rem auto;
 }/*# sourceMappingURL=main.css.map */

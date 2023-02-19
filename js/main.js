@@ -19,32 +19,107 @@ menuList.forEach((menu, i) => {
   });
 });
 
-// 메인슬라이드
-const mainSlide = [
-  {
-    id: 1,
-    img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-    text: '',
-  },
-  {
-    id: 1,
-    img: 'https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-    text: '',
-  },
-  {
-    id: 1,
-    img: 'https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80',
-    text: '',
-  },
-  {
-    id: 1,
-    img: 'https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-    text: '',
-  },
-];
+const menuBtn = document.querySelector('.menu-btn');
+const menuModal = document.querySelector('.menu-modal__container');
+const menuOpacity = document.querySelector('.menu-opacity');
+let count = 0;
+menuBtn.addEventListener('click', () => {
+  count++;
+  if (count % 2 === 1) {
+    menuModal.style.top = '3.2rem';
+  } else {
+    menuModal.style.top = '-15rem';
+  }
+});
 
-const mainSlideContainer = document.querySelector('.main-slide__container');
+// main 슬라이드
+const slideBtn = document.querySelectorAll('.slide-btn');
+const slideContainer = document.querySelector('.slide-container');
+const slide = document.querySelector('.slide');
+const slideItem = document.querySelectorAll('.slide-item');
 
-mainSlide.forEach((slide, index) => {
-  const setSlide = `<div><img src=${slide.img}></div>`;
+let slideIndex = 0;
+let maxIndex = slideItem.length - 1;
+
+slideBtn.forEach((btn, index) => {
+  btn.addEventListener('click', (e) => {
+    if (index === 1) {
+      slideIndex++;
+      if (slideIndex > maxIndex) {
+        slideIndex = 0;
+      }
+    } else {
+      slideIndex--;
+      if (slideIndex < 0) {
+        slideIndex = maxIndex;
+      }
+    }
+    slide.style.transform = `translateX(-${slideIndex * 100}vw)`;
+  });
+});
+
+window.addEventListener('scroll', (e) => {
+  const foodServiceImg = document.querySelector('.foodservice-img');
+  const managementImg = document.querySelector('.management-img');
+  const scrolly = window.scrollY;
+  if (scrolly >= 1031) {
+    foodServiceImg.style.opacity = '1';
+    if (scrolly <= 1245) {
+      const foodServiceTitle = document.querySelector('.business-foodservice h1');
+      const foodServiceText = document.querySelector('.business-foodservice p');
+      foodServiceTitle.animate(
+        {
+          transform: ['translateX(-50rem) rotate(20deg)', 'translateX(0) rotate(0deg)'],
+        },
+        {
+          duration: 1000,
+          iterations: 1,
+          direction: 'normal',
+          easing: 'ease',
+        }
+      );
+      foodServiceText.animate(
+        {
+          transform: ['translateX(-50rem) rotate(20deg)', 'translateX(0) rotate(0deg)'],
+        },
+        {
+          duration: 1000,
+          iterations: 1,
+          direction: 'normal',
+          easing: 'ease',
+        }
+      );
+    }
+  }
+  if (scrolly >= 1612) {
+    managementImg.style.opacity = '1';
+    if (scrolly <= 1788) {
+      const managementTitle = document.querySelector('.business-foodmanagement h1');
+      const managementText = document.querySelector('.business-foodmanagement p');
+
+      managementTitle.animate(
+        {
+          transform: ['translateX(550rem) rotate(20deg)', 'translateX(0) rotate(0deg)'],
+        },
+        {
+          duration: 1000,
+          iterations: 1,
+          direction: 'normal',
+          easing: 'ease',
+        }
+      );
+      managementText.animate(
+        {
+          transform: ['translateX(550rem) rotate(230deg)', 'translateX(0) rotate(0deg)'],
+        },
+        {
+          duration: 1000,
+          iterations: 1,
+          direction: 'normal',
+          easing: 'ease',
+        }
+      );
+    }
+  }
+  // console.log(scrolly);
 });
